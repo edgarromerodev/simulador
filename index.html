@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Dispositivos Responsivos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="simulator-container">
+        <h1>Simulador de Dispositivos Responsivos</h1>
+        
+        <div class="control-panel">
+            <div class="device-selector">
+                <div class="device-option active" data-device="phone">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Móvil</span>
+                </div>
+                <div class="device-option" data-device="laptop">
+                    <i class="fas fa-laptop"></i>
+                    <span>Portátil</span>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <label for="device-model">Modelo:</label>
+                <select id="device-model">
+                    <option value="iphone">iPhone</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="url">URL:</label>
+                <input type="text" id="url" placeholder="https://ejemplo.com o http://localhost:3000" value="https://example.com">
+            </div>
+            
+            <button id="load-btn">Cargar</button>
+        </div>
+        
+        <div class="device-view">
+            <div class="phone-container" id="phone-container">
+                <div class="phone iphone" id="phone">
+                    <div class="notch"></div>
+                    <div class="screen">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <span>Cargando...</span>
+                        </div>
+                        <iframe id="phone-frame" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+                    </div>
+                    <div class="home-button"></div>
+                    <div class="power-button"></div>
+                    <div class="volume-buttons">
+                        <div class="volume-button"></div>
+                        <div class="volume-button"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="laptop-container" id="laptop-container">
+                <div class="laptop">
+                    <div class="laptop-screen">
+                        <div class="laptop-screen-inner">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                                <span>Cargando...</span>
+                            </div>
+                            <iframe id="laptop-frame" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+                        </div>
+                        <div class="laptop-camera"></div>
+                        <div class="laptop-brand">PROBOOK</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <script src="script.js"></script>
+</body>
+</html>
